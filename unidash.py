@@ -24,7 +24,7 @@ melted_df = term_date_df.melt(
     id_vars=['Year', 'Term', 'Term Date'],
     value_vars=['Engineering Enrolled', 'Business Enrolled', 'Arts Enrolled', 'Science Enrolled'],
     var_name='Department',
-    value_name='Enrolled'
+    value_name='Department Enrolled'
 )
 
 # Create a Streamlit dashboard

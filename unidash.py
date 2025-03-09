@@ -56,13 +56,13 @@ fig_satisfaction = px.line(satisfaction_trend, x='Term Date', y='Student Satisfa
 st.plotly_chart(fig_satisfaction)
 
 # Plot the enrollment breakdown by department
-enrollment_department = filtered_df.groupby('Department')['Enrolled'].sum().reset_index()
-fig_enrollment_department = px.bar(enrollment_department, x='Department', y='Enrolled', title="Enrollment by Department")
+enrollment_department = filtered_df.groupby('Department')['Department Enrolled'].sum().reset_index()
+fig_enrollment_department = px.bar(enrollment_department, x='Department', y='Department Enrolled', title="Enrollment by Department")
 st.plotly_chart(fig_enrollment_department)
 
 # Compare the Spring and Fall trends
-spring_fall_comparison = filtered_df.groupby(['Year', 'Term'])['Enrolled'].mean().reset_index()
-fig_spring_fall = px.bar(spring_fall_comparison, x='Year', y='Enrolled', color='Term', barmode='group', title="Spring vs. Fall Enrollment")
+spring_fall_comparison = filtered_df.groupby(['Year', 'Term'])['Department Enrolled'].mean().reset_index()
+fig_spring_fall = px.bar(spring_fall_comparison, x='Year', y='Department Enrolled', color='Term', barmode='group', title="Spring vs. Fall Enrollment")
 st.plotly_chart(fig_spring_fall)
 
 # Compare the trends between departments, retention rates, and satisfaction levels

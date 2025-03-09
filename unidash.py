@@ -2,6 +2,7 @@ import streamlit as st
 import plotly.express as px
 import pandas as pd
 
+
 # Read the CSV file into a DataFrame
 df = pd.read_csv('university_student_dashboard_data.csv')
 
